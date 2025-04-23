@@ -11,27 +11,50 @@
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 </head>
 
 <body>
     <div class="DivContainer">
         <div class="btnContainer">
-            <button id="btnPomodoro" class="Pomodoro">Pomodoro</button>
-            <button id="btnShortBreak" class="Short">Short Break</button>
-            <button id="btnLongBreak" class="Long">Long Break</button>
+            <button id="btnPomodoro" class="Pomodoro active" onclick="setMode('pomodoro')">Pomodoro</button>
+            <button id="btnShortBreak" class="Short active" onclick="setMode('short')">Short Break</button>
+            <button id="btnLongBreak" class="Long active" onclick="setMode('long')">Long Break</button>
         </div>
 
         <div class="timerDiv">
-            <p class="PomodoroTimer">25:00</p>
+            <p id="Timer">25:00</p>
         </div>
 
 
         <div class="BtnStartContainer">
-            <button id="startButton" class="BtnStart">START</button>
+            <button id="startButton" onclick="toggleTimer()" class="BtnStart">START</button>
+        </div>
+
+    </div>
+
+
+    <div class="TaskDiv" onclick="openTaskCard()">
+        <p class="AddTask"> <img class="plusimg" src="/images/icons8-plus-30 (1).png" alt="">Add task</p>
+    </div>
+
+    <div class="card" id="cardBox">
+        <div class="card-body">
+            <input type="text" id="taskInput" placeholder="What are you working on?">
+            <div class="buttonBox">
+                <button class="btnTask" id="cancelBtn" onclick="closeTaskCard()">Cancel</button>
+                <button class="btnTask" id="saveBtn" onclick="saveTask()">Save</button>
+            </div>
         </div>
     </div>
+
+
+    <!-- <div id="TaskCard" class="TaskCard hidden">
+        <input type="text" id="taskInput" placeholder="What are you working on?">
+        <button onclick="saveTask()">Save</button>
+        <button onclick="closeTaskCard()">Cancel</button>
+    </div> -->
+    <script src="script.js"></script>
 </body>
 
 </html>
