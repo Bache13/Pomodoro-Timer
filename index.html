@@ -15,6 +15,10 @@
 </head>
 
 <body>
+    <div class="main-header">
+        <h1 class="header1">Pomodoro Timer</h1>
+    </div>
+
     <div class="DivContainer">
         <div class="btnContainer">
             <button id="btnPomodoro" class="Pomodoro active" onclick="setMode('pomodoro')">Pomodoro</button>
@@ -51,6 +55,26 @@
 
     <div id="taskList" class="task-list-container">
 
+    </div>
+
+    <div class="Qa-div" onclick="toggleModal()">
+        <img src="images/icons8-faq-50.png" alt="">
+    </div>
+
+    <div id="qaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal()">&times;</span>
+            <h2>What is Pomodoro?</h2>
+            <p>
+                <br>
+                The Pomodoro Technique is a time management method developed by Francesco Cirillo.
+                <br>
+                <br>
+                It uses a timer to break work into intervals, traditionally 25 minutes in length, followed by a 5 minute break.
+                <br>
+                These intervals are called "pomodoros" and after 4 "pomodoros" completed you take a 15 minute break.
+            </p>
+        </div>
     </div>
 
     <script src="script.js"></script>
